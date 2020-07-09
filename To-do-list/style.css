@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jost', sans-serif;
+}
+
+.container {
+    background-color: white;
+    text-align: center;
+}
+
+.todo {
+    background-color: #222;
+    color: white;
+    width: 100%;
+    max-width: 768px;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.todo__title {
+    color: lightgoldenrodyellow;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0 0 20px 0;
+}
+
+
+.todo-input {
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: none;
+}
+
+.todo__body {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    overflow: scroll;
+    
+}
+
+.todo__list {
+    list-style: ;
+    text-align: left;
+    width: 100%;
+    max-width: 430px;
+    margin: 0;
+    padding: 0;
+}
+
+.todo__item {
+    padding: 20px 0;
+    border-bottom: 1px solid white;
+}
