@@ -1,27 +1,37 @@
+header {
+    margin: 0;
+    padding: 30px;
+    background-color: white;
+}
+
 body {
     color: white;
     background-color: black;
+    margin: 0;
 }
 
 h1 {
     color: black;
-    background-color: white;
-    padding: 30px;
+}
+main {
+    padding: 20px;
 }
 
 .button {
     background-color: transparent;
     color: white;
     border: 1px solid white;
+    border-radius: 0;
     padding: 1em;
     font-size: 1.2em;
 }
 
-.button:hover, .button:active {
+.button:hover, .button:active, .button:focus {
     background-color: white;
     color: black;
     border-color: black;
     cursor: pointer;
+    border-radius: 0;
 }
 
 
