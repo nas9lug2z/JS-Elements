@@ -49,7 +49,11 @@ function getRandomIntInclusive() {
 function main() {
     buttonEl.addEventListener("click", function() {
         let randomNum = getRandomIntInclusive();
+        const sound = new Audio("sound.mp3");
+        sound.play();
+        diceImg.classList.toggle("rotate");
         diceImg.src = `images/dice${randomNum}.png`;
+
     });
 }
 

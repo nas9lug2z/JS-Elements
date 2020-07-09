@@ -42,3 +42,15 @@ main {
 .show {
     display: block;
 }
+
+.diceimg {
+    transition: all 2s ease-in-out;
+}
+
+.rotate {
+    transform: rotate(36000deg);
+}
+
+.sound {
+    display: none;
+}
