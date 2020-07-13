@@ -1,6 +1,6 @@
 const todoInputEl = document.querySelector(".todo-input");
 const todoListEl = document.querySelector(".todo__list");
-const todoItemEl = document.querySelectorAll(".todo__item");
+const todoItemEls = document.querySelectorAll(".todo__item");
 
 
 function addListItem () {
@@ -21,6 +21,25 @@ function createListItem (text) {
     return newListEl;
 }
 
-createListItem();
+//doesn't work.
+// function toggleDone () {
+//     for (let elem of todoItemEls) {
+//         elem.addEventListener("click", function() {
+//             elem.classList.toggle("done");
+//         })
+//     }
+// }
+
+function toggleDone() {
+    todoListEl.addEventListener("click", function(event) {
+        if (event.target.classList.contains("todo__item")){
+            event.target.classList.toggle("done");
+        }
+    })
+}
+
+
 addListItem();
+toggleDone();
+
 

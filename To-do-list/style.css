@@ -55,8 +55,7 @@ body {
     margin: 0;
     padding: 0;
     height: 90%;
-    max-height: 800px;
-    overflow-y: auto scroll;
+    max-height: 600px;
 }
 
 .todo__item {
