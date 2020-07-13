@@ -45,20 +45,31 @@ body {
     max-width: 400px;
     margin: auto;
     margin-top: 20px;
-    overflow: scroll;
-    
 }
 
 .todo__list {
-    list-style: ;
+    list-style: none;
     text-align: left;
     width: 100%;
     max-width: 430px;
     margin: 0;
     padding: 0;
+    height: 90%;
+    max-height: 800px;
+    overflow-y: auto scroll;
 }
 
 .todo__item {
     padding: 20px 0;
     border-bottom: 1px solid white;
+}
+
+.todo__item:hover {
+    cursor: default;
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+    border-bottom: 1px solid #aaa;
 }
