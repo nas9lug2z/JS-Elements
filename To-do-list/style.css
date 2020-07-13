@@ -61,6 +61,8 @@ body {
 .todo__item {
     padding: 20px 0;
     border-bottom: 1px solid white;
+    display: grid;
+    grid-template-columns: 2;
 }
 
 .todo__item:hover {
@@ -71,4 +73,36 @@ body {
     text-decoration: line-through;
     opacity: 0.5;
     border-bottom: 1px solid #aaa;
+}
+
+.close {
+    color: red;
+}
+
+.cross-div {
+    text-align: right;
+    padding: 0;
+    grid-column:2;
+}
+.text {
+    display: inline;
+    grid-column: 1;
+}
+
+.cross {
+    display: inline-block;
+    background-color: white;
+    padding: 2px;
+    width: 1em;
+    position: relative;
+    border-radius: 2px;
+}
+
+.first-bar {
+    left: 15px;
+    transform: rotate(45deg);
+}
+
+.second-bar {
+    transform: rotate(-45deg);
 }

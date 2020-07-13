@@ -3,11 +3,29 @@ const todoListEl = document.querySelector(".todo__list");
 const todoItemEls = document.querySelectorAll(".todo__item");
 
 
+//add cross for all items
+
+function showCross () {
+    todoListEl.addEventListener("mouseover", function(event) {
+        if (event.target.classList.contains("todo__item")) {
+            event.target.classList.add("close");
+        }
+    })
+}
+
+function hideCross() {
+    todoListEl.addEventListener("mouseout", function(event) {
+        if (event.target.classList.contains("todo__item")) {
+            event.target.classList.remove("close");
+        }
+    })
+}
+
 function addListItem () {
     todoInputEl.addEventListener("keypress", function (event) {
         if (event.keyCode === 13) {
             let newListItem = createListItem(todoInputEl.value);
-            todoListEl.appendChild(newListItem);
+            todoListEl.insertBefore(newListItem, todoListEl.childNodes[0]);
             todoInputEl.value = "";
         }
     })
@@ -38,8 +56,11 @@ function toggleDone() {
     })
 }
 
-
+hideCross();
+showCross();
 addListItem();
 toggleDone();
 
-
+// 1. create a css of a cros or word delete on hover
+// 2. create an event for the parent
+// 3. loop it?
