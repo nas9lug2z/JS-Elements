@@ -20,4 +20,28 @@ function addNewItem () {
     })
 }
 
+//creating function to cross out done event
+
+function toggleChecked () {
+    list.addEventListener("click", function(event) {
+        if (event.target.classList.contains("text")){
+            event.target.classList.toggle("done");
+        }
+    })
+}
+
+
+function deleteItem() {
+    list.addEventListener("click", function(event) {
+        const targetEl = event.target;
+        const parentEl = targetEl.parentElement;
+        if (targetEl.classList.contains("cross-div")){
+            parentEl.classList.toggle("display-none");
+        }
+    })
+}
+
+
+deleteItem();
+toggleChecked();
 addNewItem();

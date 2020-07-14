@@ -74,7 +74,6 @@ body {
 .done {
     text-decoration: line-through;
     opacity: 0.5;
-    border-bottom: 1px solid #aaa;
 }
 
 .close {
@@ -92,22 +91,6 @@ body {
     grid-column: 1;
 }
 
-
-/* .todo__item::after {
-    content: 'gello';
-    background-color: red;
-    position: relative;
-    bottom: 20px;
-    top: 0px;
-    right: 0px;
-    left: 0px;
-    width: 20px;
-    height: 10px;
-    z-index: 999;
-    text-align: right;
-} */
-
-
 .cross {
     display: inline-block;
     background-color: white;
@@ -119,6 +102,10 @@ body {
 
 .display-none {
     display: none;
+}
+
+.show {
+    display: block;
 }
 
 .first-bar {
