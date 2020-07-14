@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: auto;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    margin: 1em 0 0.5em 0;
+}
+
+.tagline {
+    text-align: center;
+    margin: 1em;
+    font-size: 1.5em;
+}
+
+.accordion {
+    text-align: left;
+}
+
+.accordion__item {
+    padding: 1em 0;
+    /* border-bottom: 1px solid lightgrey; */
+    border-top: 1px solid lightgrey;
+}
+
+.accordion__heading {
+    margin: 0.4em 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3em 0;
+}
+
+.accordion__text {
+    font-size: 14px;
+    /*properties for accordion*/
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s all ease;
+}
