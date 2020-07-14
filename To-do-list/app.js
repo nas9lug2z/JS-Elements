@@ -3,23 +3,7 @@ const todoListEl = document.querySelector(".todo__list");
 const todoItemEls = document.querySelectorAll(".todo__item");
 
 
-//add cross for all items
 
-function showCross () {
-    todoListEl.addEventListener("mouseover", function(event) {
-        if (event.target.classList.contains("todo__item")) {
-            event.target.classList.add("close");
-        }
-    })
-}
-
-function hideCross() {
-    todoListEl.addEventListener("mouseout", function(event) {
-        if (event.target.classList.contains("todo__item")) {
-            event.target.classList.remove("close");
-        }
-    })
-}
 
 function addListItem () {
     todoInputEl.addEventListener("keypress", function (event) {
@@ -32,21 +16,26 @@ function addListItem () {
 }
 
 
+// function createListItem (text) {
+//     const newListEl = document.createElement("li");
+//     newListEl.textContent = text;
+//     newListEl.classList.add("todo__item");
+//     return newListEl;
+// }
+
 function createListItem (text) {
-    const newListEl = document.createElement("li");
-    newListEl.textContent = text;
-    newListEl.classList.add("todo__item");
-    return newListEl;
+    const itemContent = <li class="todo__item">
+                            <span class="text">{$text}</span>
+                            <div class="cross-div">
+                                <span class="cross first-bar"></span>
+                                <span class="cross second-bar"></span>
+                            </div>
+                        </li>
+
+
 }
 
-//doesn't work.
-// function toggleDone () {
-//     for (let elem of todoItemEls) {
-//         elem.addEventListener("click", function() {
-//             elem.classList.toggle("done");
-//         })
-//     }
-// }
+
 
 function toggleDone() {
     todoListEl.addEventListener("click", function(event) {
@@ -56,8 +45,12 @@ function toggleDone() {
     })
 }
 
-hideCross();
-showCross();
+
+
+
+
+// hideCross();
+// showCross();
 addListItem();
 toggleDone();
 

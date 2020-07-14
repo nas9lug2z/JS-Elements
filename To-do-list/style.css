@@ -69,6 +69,8 @@ body {
     cursor: default;
 }
 
+
+
 .done {
     text-decoration: line-through;
     opacity: 0.5;
@@ -84,22 +86,43 @@ body {
     padding: 0;
     grid-column:2;
 }
+
 .text {
     display: inline;
     grid-column: 1;
 }
 
+
+/* .todo__item::after {
+    content: 'gello';
+    background-color: red;
+    position: relative;
+    bottom: 20px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    width: 20px;
+    height: 10px;
+    z-index: 999;
+    text-align: right;
+} */
+
+
 .cross {
     display: inline-block;
     background-color: white;
-    padding: 2px;
+    padding: 1px;
     width: 1em;
     position: relative;
     border-radius: 2px;
 }
 
+.display-none {
+    display: none;
+}
+
 .first-bar {
-    left: 15px;
+    left: 16px;
     transform: rotate(45deg);
 }
 
