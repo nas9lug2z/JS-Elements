@@ -24,7 +24,7 @@ function addNewItem () {
 
 function toggleChecked () {
     list.addEventListener("click", function(event) {
-        if (event.target.classList.contains("text")){
+        if (event.target.classList.contains("text") || event.target.classList.contains("text done")){
             event.target.classList.toggle("done");
         }
     })
