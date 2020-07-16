@@ -38,11 +38,13 @@ main {
     background-color: lightsteelblue;
     padding: 2em;
     border-radius: 5px;
+    width: 120px;
+    height: 160px;
 }
-.timer__day,
-.timer__hour,
-.timer__minute,
-.timer__second {
+.timer__days,
+.timer__hours,
+.timer__minutes,
+.timer__seconds {
     font-size: 3rem;
     color: black;
 }
