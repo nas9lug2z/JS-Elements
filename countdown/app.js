@@ -1,14 +1,12 @@
 let days = document.querySelector(".timer__days");
-let hours = Number(document.querySelector(".timer__hours").innerHTML);
-
-console.log();
-
+let hours = document.querySelector(".timer__hours");
+let minutes = document.querySelector(".timer__minutes");
+let seconds = document.querySelector(".timer__seconds");
 
 const today = Date();
-console.log(today)
-console.log(hours)
 
-function countTime(time, range) {
+//have to add rangeMax instead of set in HTML
+function countTime(time, speed, rangeMax) {
     setInterval(function() {
         timeNum = Number(time.innerHTML);
         if (timeNum === 0) {
@@ -24,7 +22,7 @@ function countTime(time, range) {
             time.nextElementSibling.innerHTML = time.nextElementSibling.innerHTML.slice(0, this.length-1);
             time.innerHTML =  "0" + timeNum;
         }
-        else if (timeNum < 10) {
+        else if (timeNum <= 10) {
             timeNum--;
             time.innerHTML =  "0" + timeNum;
         }
@@ -32,31 +30,11 @@ function countTime(time, range) {
             timeNum--;
             time.innerHTML = timeNum;
         }
-    }, 1000);
+    }, speed);
 }
 
 
-// function countHours() {
-//     setInterval(function() {
-//         if (hours === 0) {
-//             document.querySelector(".timer__hours").nextElementSibling.innerHTML = "Hours";
-//             clearInterval(countHours);
-//         }
-//         else if (hours === 2) {
-//             hours--;
-//             document.querySelector(".timer__hours").nextElementSibling.innerHTML = "Hour";
-//             document.querySelector(".timer__hours").innerHTML =  "0" + hours;
-//         }
-//         else if (hours < 10) {
-//             hours--;
-//             document.querySelector(".timer__hours").innerHTML =  "0" + hours;
-//         }
-//         else {
-//             hours--;
-//             document.querySelector(".timer__hours").innerHTML = hours;
-//         }
-//     }, 1000);
-// }
-
-// countHours();
-countTime(days, 07);
+countTime(days, 1000);
+countTime(hours, 1000);
+countTime(minutes, 1000);
+countTime(seconds, 1000);
