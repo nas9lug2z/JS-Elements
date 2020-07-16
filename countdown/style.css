@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+}
+main {
+    margin-top: 1rem;
+}
+.container {
+    max-width: 768px;
+    margin: 0 auto;
+}
+.timer {
+    background-color: lightslategrey;
+    border-radius: 5px;
+    padding: 2rem;
+    height: 400px;
+}
+.timer__header {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+}
+.timer__body {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+}
+.timer__item {
+    text-align: center;
+    background-color: lightsteelblue;
+    padding: 2em;
+    border-radius: 5px;
+}
+.timer__day,
+.timer__hour,
+.timer__minute,
+.timer__second {
+    font-size: 3rem;
+    color: black;
+}
+.timer__label {
+    margin-top: 1em;
+}
