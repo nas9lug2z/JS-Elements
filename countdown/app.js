@@ -1,6 +1,7 @@
 let days = document.querySelector(".timer__days");
 let hours = Number(document.querySelector(".timer__hours").innerHTML);
 
+console.log();
 
 
 const today = Date();
@@ -15,22 +16,20 @@ function countTime(time, range) {
         }
         else if (timeNum === 1) {
             timeNum--;
-            time.nextElementSibling.innerHTML = "Days";
+            time.nextElementSibling.innerHTML += "s";
             time.innerHTML =  "0" + timeNum;
         }
         else if (timeNum === 2) {
             timeNum--;
-            time.nextElementSibling.innerHTML = "Day";
+            time.nextElementSibling.innerHTML = time.nextElementSibling.innerHTML.slice(0, this.length-1);
             time.innerHTML =  "0" + timeNum;
         }
         else if (timeNum < 10) {
             timeNum--;
-            time.nextElementSibling.innerHTML = "Days";
             time.innerHTML =  "0" + timeNum;
         }
         else {
             timeNum--;
-            time.nextElementSibling.innerHTML = "Days";
             time.innerHTML = timeNum;
         }
     }, 1000);
