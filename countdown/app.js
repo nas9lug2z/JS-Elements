@@ -3,7 +3,6 @@ let hours = document.querySelector(".timer__hours");
 let minutes = document.querySelector(".timer__minutes");
 let seconds = document.querySelector(".timer__seconds");
 
-const today = Date();
 
 // const daysLeft = 5;
 // const hoursLeft = 3;
@@ -16,33 +15,38 @@ const today = Date();
 
 
 function getTimeDifference (start, end) {
-
+    let milliseconds = Math.floor(end.getTime() - start.getTime());
+    //round up the days left
+    let daysLeft = Math.floor(milliseconds / 8.64e+7);
+    //find out how many hours left without full  days
+    let hoursLeft = Math.floor ((milliseconds - (daysLeft * 8.64e+7)) / 3.6e+6 );
+    //find out how many minutes left without full hours
+    let minutesLeft = Math.floor( (milliseconds - (daysLeft * 8.64e+7) - (hoursLeft *3.6e+6)) / 60000);
+    //find out seconds
+    let secondsLeft = Math.floor ( (milliseconds - (daysLeft * 8.64e+7) - (hoursLeft *3.6e+6) - (minutesLeft * 60000)) / 1000);
+    return {
+        rDays: daysLeft,
+        rHours: hoursLeft,
+        rMinutes: minutesLeft,
+        rSeconds: secondsLeft
+    }
 }
 
-console.log(new Date())
+let timer = setInterval(function() {
+    const startDate = new Date();
+    const endDate = new Date("August 06, 2020 07:30:00");
+    let timeDiffObj = getTimeDifference(startDate, endDate);
+    days.textContent = timeDiffObj.rDays;
+    hours.textContent = timeDiffObj.rHours;
+    minutes.textContent = timeDiffObj.rMinutes;
+    seconds.textContent = timeDiffObj.rSeconds;
+}, 1000)
 
-
-//function of input should be string with 0 in case  it is smaller than
-function addInitialZero() {
-}
-
-
+;
 
 
 // function countTime(time, speed, range) {
 //     timeNum = Number(time.innerHTML);
-//     let roundsCounter = Math.floor(timeNum/range);
-//     console.log(roundsCounter);
-//     let remainder = timeNum % range;
-//     console.log(remainder);
-//     //creating a rounds variable in order to count rounds
-//     if (timeNum >= range) {
-
-//         for (let i = roundsCounter; i > 0; i--) {
-//             timeNum = remainder;
-//             console.log(timeNum);
-//         }
-//     }
 
 //     //function of countdown. Has to have implemented rounds.
 //     setInterval(function() {
@@ -64,7 +68,7 @@ function addInitialZero() {
 //         }
 //         else if (timeNum === 2) {
 //             timeNum--;
-//             time.nextElementSibling.innerHTML = time.nextElementSibling.innerHTML.slice(0, this.length-1);
+//             time.nextElementSibling.innerHTML = time.nextE lementSibling.innerHTML.slice(0, this.length-1);
 //             time.innerHTML =  "0" + timeNum;
 //         }
 //         else if (timeNum <= 10) {
@@ -81,7 +85,6 @@ function addInitialZero() {
 
 //     }, speed);
 // }
-
 
 // countTime(days, 1000);
 // countTime(hours, 1000, 24);
