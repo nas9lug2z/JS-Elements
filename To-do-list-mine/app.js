@@ -42,3 +42,9 @@ searchForm.addEventListener('input', e => {
     } );
 });
 
+function saveToLocalStorage() {
+    localStorage.setItem("word", "heloo");
+    console.log(localStorage)
+}
+
+saveToLocalStorage();
