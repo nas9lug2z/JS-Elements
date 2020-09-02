@@ -51,18 +51,19 @@ ul {
     color: black;
     cursor: pointer;
 }
+
+.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
 .cross {
     display: block;
     background-color: darkgrey;
     color: white;
     text-align: center;
     border-radius: 3px;
-    padding: 0.4rem;;
+    padding: 0.4rem;
 }
 .cross:hover{
     background-color:red;
-}
-.done {
-    text-decoration: line-through;
-    opacity: 0.5;
 }
