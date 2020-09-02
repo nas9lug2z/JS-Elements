@@ -5,7 +5,8 @@ const searchForm = document.querySelector("#search");
 //remove item with a cross button
 ulList.addEventListener('click', (e) => {
                 if (e.target.classList.contains("cross") === true) {
-                    e.target.parentNode.style.display = "none";
+                    let itemToBeRemoved = e.target.parentElement;
+                    ulList.removeChild(itemToBeRemoved);
                 }
                 else if (e.target.classList.contains("task") === true) {
                     e.target.firstChild.classList.toggle("done");
@@ -27,33 +28,17 @@ addInput.addEventListener('keyup', (e) => {
         })
 
 //filter function
-searchForm.addEventListener('input', filterItems);
-
-
-function filterItems(e){
-    //convert all input text to lowercase
+searchForm.addEventListener('input', e => {
     var text = e.target.value.toLowerCase();
     var items = ulList.getElementsByTagName("li")
     Array.from(items).forEach(function(item){
         let itemName = item.firstChild.textContent;
         if (itemName.toLowerCase().indexOf(text) === -1) {
             item.style.display = "none";
-            console.log(items)
         }
         else {
             item.style.display = "flex";
         }
     } );
-    // changeToFloat();
-};
-
-// function changetToFloat() {
-//     let items = ulList.querySelectorAll(".tasks");
-//     for (let item of items) {
-//         if (item.style.contains("block")) {
-//             item.style.display = "float";
-//         }
-//     }
-// }
-
+});
 
