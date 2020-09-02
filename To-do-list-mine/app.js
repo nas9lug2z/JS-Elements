@@ -1,8 +1,8 @@
-const task = document.querySelectorAll(".task");
 const addInput = document.querySelector("#add");
 const ulList = document.querySelector("ul");
-const searchInput = document.querySelector("#search");
+const searchForm = document.querySelector("#search");
 
+//remove item with a cross button
 ulList.addEventListener('click', (e) => {
                 if (e.target.classList.contains("cross") === true) {
                     e.target.parentNode.style.display = "none";
@@ -15,7 +15,8 @@ ulList.addEventListener('click', (e) => {
                 }
         });
 
-addInput.addEventListener('keypress', (e) => {
+//add new item
+addInput.addEventListener('keyup', (e) => {
             if (addInput.value !== "" && e.keyCode === 13) {
                 let newTask = document.createElement('li');
                 newTask.className = 'task';
@@ -24,4 +25,35 @@ addInput.addEventListener('keypress', (e) => {
                 addInput.value = "";
             }
         })
+
+//filter function
+searchForm.addEventListener('input', filterItems);
+
+
+function filterItems(e){
+    //convert all input text to lowercase
+    var text = e.target.value.toLowerCase();
+    var items = ulList.getElementsByTagName("li")
+    Array.from(items).forEach(function(item){
+        let itemName = item.firstChild.textContent;
+        if (itemName.toLowerCase().indexOf(text) === -1) {
+            item.style.display = "none";
+            console.log(items)
+        }
+        else {
+            item.style.display = "flex";
+        }
+    } );
+    // changeToFloat();
+};
+
+// function changetToFloat() {
+//     let items = ulList.querySelectorAll(".tasks");
+//     for (let item of items) {
+//         if (item.style.contains("block")) {
+//             item.style.display = "float";
+//         }
+//     }
+// }
+
 
